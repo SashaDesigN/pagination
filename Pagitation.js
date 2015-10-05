@@ -22,7 +22,8 @@ var Paginate = (function(){
       Paginate.getData(n)
     })
   }
-
+ 
+set.getData = function(){ 
   $.ajax({
     type:'post',
     async:1,
@@ -37,15 +38,9 @@ var Paginate = (function(){
       set.list[n].n++
     }
   })
+}
 
-  /* render of list returned data from server */
-  set.renderData = function(n,d){
-    for(var i=0,c=d.length; i<c; i++){
-      set.renderItem(n,d[i])
-    }
-  }
-
-  /* render item */
+ /* render item */
   set.renderData = function(n,d){
     $.each(d,function(k,v){
       set.renderItem(n,v)
